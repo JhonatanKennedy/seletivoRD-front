@@ -1,0 +1,48 @@
+@import "@/global.scss";
+
+@keyframes show {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+.container {
+  position: fixed;
+  z-index: 100;
+  width: 100%;
+  height: 100%;
+  background-color: rgba($gray-100, $alpha: 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  animation: show 1s;
+
+  &-modal {
+    background-color: $color-white;
+    width: 760px;
+    height: 400px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    border-radius: 4px;
+    padding-bottom: 2rem;
+
+    &-header {
+      width: 100%;
+      display: flex;
+      justify-content: flex-end;
+      .header-exit {
+        img {
+          width: 2rem;
+          height: 2rem;
+        }
+        margin: 1rem;
+        cursor: pointer;
+      }
+    }
+  }
+}

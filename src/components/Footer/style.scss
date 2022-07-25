@@ -1,0 +1,65 @@
+@import "@/global.scss";
+
+.container {
+  width: 100%;
+  height: 15rem;
+  background-color: $primary;
+  display: flex;
+  justify-content: center;
+}
+
+.footer-container {
+  width: 90%;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-areas:
+    "logo midia"
+    "line line"
+    "policy policy";
+
+  &-logo {
+    grid-area: logo;
+    align-self: center;
+    img {
+      height: 2.5rem;
+    }
+  }
+  &-line {
+    grid-area: line;
+    border-top: 1px solid $secondary;
+  }
+  &-midia {
+    grid-area: midia;
+    justify-self: flex-end;
+    align-self: center;
+    display: flex;
+    gap: 2rem;
+    img {
+      height: 2rem;
+    }
+  }
+  &-policy {
+    grid-area: policy;
+    justify-self: end;
+    a {
+      color: $gray-100;
+    }
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .footer-container {
+    grid-template-areas:
+      "logo logo"
+      "line line"
+      "midia midia"
+      "policy policy";
+    &-logo {
+      justify-self: center;
+    }
+    &-midia {
+      align-self: flex-start;
+      justify-self: center;
+    }
+  }
+}

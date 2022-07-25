@@ -1,0 +1,50 @@
+@import "@/styles/colors";
+
+@mixin button-default(
+  $color,
+  $hoverColor,
+  $hasBorder: true,
+  $fontSize: 1.4rem,
+  $shadowWidth: 95.5%
+) {
+  width: 100%;
+  position: relative;
+  background-color: $color;
+  padding: 0.8rem 1.6rem;
+  font-size: $fontSize;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+
+  @if $hasBorder {
+    border: 2px solid $gray-100;
+
+    &::after {
+      content: "";
+      position: absolute;
+      width: $shadowWidth;
+      left: -2px;
+      bottom: -6px;
+      border: solid 4px transparent;
+      border-top: solid 4px #212429;
+      border-bottom: none;
+    }
+  } @else {
+    border: none;
+
+    &::after {
+      content: "";
+      position: absolute;
+      width: $shadowWidth;
+      left: 0;
+      bottom: -4px;
+      border: solid 4px transparent;
+      border-top: solid 4px #212429;
+      border-bottom: none;
+    }
+  }
+
+  &:hover {
+    background-color: $hoverColor;
+  }
+}
